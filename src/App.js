@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react'
 import { useForm } from './useForm'
-import Hello from './Hello'
+import { Hello } from './Hello'
 
 const App = () => {
   const [values, handleChange] = useForm({email: '', firstName: '', password: ''})
   const inputRef = useRef();
-  const hello = useRef(()=> {console.log('hello')});
+  const hello = useRef(()=> console.log('hello'));
   const [showHello, setShowHello] = useState(true);
 
   return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useFetch } from './useFetch'
 
-const Hello = () => {
+export const Hello = () => {
     const renders = useRef(0);
     //http://numbersapi.com/43/trivia
     const [count, setCount] = useState(() => JSON.parse(localStorage.getItem("count")));
@@ -16,8 +16,7 @@ const Hello = () => {
         <div>
             <div>{!data ? 'loading...': data}</div>
             <div>count: {count}</div>
-            <button onClick={() => setCount(count => count + 1 )}>Increment</button>
+            <button onClick={() => setCount(c => c + 1 )}>Increment</button>
         </div>
     );
 }
-export default Hello;
