@@ -1,10 +1,15 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useLayoutEffect } from 'react'
 import { useForm } from './useForm'
 import { Hello } from './Hello'
 
 const App = () => {
   const [values, handleChange] = useForm({email: '', firstName: '', password: ''})
   const inputRef = useRef();
+
+  useLayoutEffect(() => {
+    console.log(inputRef.current.getBoundingClientRect());
+  }, []);
+
   const hello = useRef(()=> console.log('hello'));
   const [showHello, setShowHello] = useState(true);
 
